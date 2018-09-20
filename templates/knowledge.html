@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+    {% for knowledgeItem in knowledgeinfo %}
+        <knowledge class="media content-section">
+          <div class="knowledge-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ knowledgeItem.author }}</a>
+              <small class="text-muted">{{ knowledgeItem.date_posted }}</small>
+            </div>
+            <h2><a class="article-title" href="#">{{ knowledgeItem.title }}</a></h2>
+            <p class="article-content">
+                <ul>
+                    {% for k, v in knowledgeItem['content'] |dictsort %}
+                    <li> {% print k + " =  "+ v %} </li> 
+                    {% endfor %}
+                </ul>
+            </p>
+          </div>
+        </knowledge>
+        <div>
+              {% include 'linux_required.html'  %}
+              {% include 'python.html'  %}
+        </div>
+    {% endfor %}
+{% endblock content %}

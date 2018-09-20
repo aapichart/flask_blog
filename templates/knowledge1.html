@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+{% block content %}
+    {% for knowledgeItem in knowledgeinfo %}
+       {% for item in knowledgeItem %}
+        <knowledge class="media content-section">
+          <div class="knowledge-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ post.author }}</a>
+              <small class="text-muted">{{ post.date_posted }}</small>
+            </div>
+            <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+            <p class="article-content">{{ post.content }}
+                <ul>
+                    <li> On VM, we install the following Library </li>
+                    <li> 1. Python 2.7 </li>
+                    <li> 2. Flask </li>
+                    <li> 3. Pip </li>
+                    <li> 4. Flask-wtf </li>
+                    <li>    pip install flask-wtf  </li>
+                    <li> 5. oh-my-zsh </li>
+                    <li> 6. Powerlevel9k </li>
+                    <li> 7. zsh-autohighlights </li>
+                    <li> 8. tmux </li>
+                    <li> 9. vim  </li>
+                    <li> 10.jedi-vim </li>
+                    <li> 11.Brolink.vim </li>
+                </ul>
+            </p>
+          </div>
+        </knowledge>
+       {% endfor %}
+    {% endfor %}
+{% endblock content %}
