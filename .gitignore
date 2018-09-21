@@ -1,3 +1,5 @@
+#ignore all directory
+__pycache__/
 #ignore all logs
 *.log
 ## OS generated files #
